@@ -16,5 +16,5 @@ Here are the basic requirements:
 
   An example is like this:
 
-  ![level2](./level2.png)
+  ![level1](./level1.png)
 

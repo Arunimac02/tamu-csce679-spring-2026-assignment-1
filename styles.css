@@ -1,0 +1,137 @@
+﻿:root {
+  --bg: #f4f5ef;
+  --panel: #fffdf7;
+  --ink: #18222d;
+  --muted: #4f5b67;
+  --grid: #d7dbcf;
+  --accent: #224e68;
+  --accent-soft: #d9e9f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1000px 400px at 10% 0%, #eef3df 0%, transparent 60%),
+    radial-gradient(800px 300px at 90% 100%, #dce8ef 0%, transparent 60%),
+    var(--bg);
+}
+
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.header p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.controls {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mode-btn {
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  background: #ffffff;
+  color: var(--accent);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.viz-wrap {
+  margin-top: 18px;
+  background: var(--panel);
+  border: 1px solid #d3d7ca;
+  border-radius: 12px;
+  padding: 10px;
+  position: relative;
+  overflow: auto;
+}
+
+#matrixSvg {
+  width: 100%;
+  min-width: 980px;
+  height: 900px;
+  display: block;
+}
+
+.axis text {
+  fill: var(--ink);
+  font-size: 12px;
+}
+
+.axis path,
+.axis line {
+  stroke: #6f7d8a;
+}
+
+.cell rect {
+  stroke: var(--grid);
+  stroke-width: 1;
+}
+
+.sparkline {
+  fill: none;
+  stroke: #243746;
+  stroke-width: 1.15;
+  pointer-events: none;
+}
+
+.legend-title {
+  font-weight: 600;
+  fill: var(--ink);
+  font-size: 13px;
+}
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  visibility: hidden;
+  z-index: 20;
+  max-width: 260px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #c9d0c0;
+  background: rgba(255, 255, 252, 0.97);
+  box-shadow: 0 8px 20px rgba(18, 30, 40, 0.12);
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 900px) {
+  .header h1 {
+    font-size: 1.4rem;
+  }
+
+  .header p {
+    font-size: 0.95rem;
+  }
+
+  #matrixSvg {
+    min-width: 860px;
+    height: 860px;
+  }
+}

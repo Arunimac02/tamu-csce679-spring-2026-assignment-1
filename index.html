@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hong Kong Monthly Temperature Matrix (2008-2017)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <h1>Hong Kong Monthly Temperature Matrix</h1>
+      <p>Daily records aggregated by month for the last 10 years in the dataset (2008-2017).</p>
+    </header>
+
+    <section class="controls" aria-label="Temperature mode controls">
+      <button id="showMax" class="mode-btn active" type="button">Maximum Temperature</button>
+      <button id="showMin" class="mode-btn" type="button">Minimum Temperature</button>
+    </section>
+
+    <section class="viz-wrap">
+      <svg id="matrixSvg" role="img" aria-label="Temperature matrix view"></svg>
+      <div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
